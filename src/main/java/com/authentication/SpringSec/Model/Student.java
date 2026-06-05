@@ -1,4 +1,4 @@
-package com.authentication.SpringSec;
+package com.authentication.SpringSec.Model;
 
 public class Student {
     private int id;

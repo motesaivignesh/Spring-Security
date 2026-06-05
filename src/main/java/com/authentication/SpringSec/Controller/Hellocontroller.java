@@ -1,4 +1,4 @@
-package com.authentication.SpringSec;
+package com.authentication.SpringSec.Controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
