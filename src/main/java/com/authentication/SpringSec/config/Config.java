@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -38,7 +39,7 @@ public AuthenticationProvider authenticationProvider() {
     // 2. LINE REMOVED: provider.setUserDetailsService(userDetailsService); (since it's undefined)
     
     // 3. Set the password encoder strategy
-    provider.setPasswordEncoder(NoOpPasswordEncoder.getInstance()); 
+    provider.setPasswordEncoder(new BCryptPasswordEncoder(12)); 
     
     return provider;
 }
