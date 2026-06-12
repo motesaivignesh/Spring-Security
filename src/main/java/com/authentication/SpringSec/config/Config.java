@@ -33,14 +33,8 @@ public class Config {
 
    @Bean
 public AuthenticationProvider authenticationProvider() {
-    // 1. Pass userDetailsService directly into the constructor as required by your compiler
     DaoAuthenticationProvider provider = new DaoAuthenticationProvider(userDetailsService);
-    
-    // 2. LINE REMOVED: provider.setUserDetailsService(userDetailsService); (since it's undefined)
-    
-    // 3. Set the password encoder strategy
     provider.setPasswordEncoder(new BCryptPasswordEncoder(12)); 
-    
     return provider;
 }
 
